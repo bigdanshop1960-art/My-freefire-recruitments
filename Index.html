@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Apply to join Prime X Free Fire Guild.">
+  <title>PRIME X | Guild Recruitment</title>
+
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #15140f;
+      --gold: #d5ac53;
+      --gold-light: #f4dc9b;
+      --white: #f7f5ef;
+      --muted: #aaa79d;
+      --border: #403622;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 7%;
+      background: #0e0e0b;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span,
+    .gold {
+      color: var(--gold);
+    }
+
+    .status {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .status::before {
+      content: "● ";
+      color: #7de09b;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 65px;
+      background:
+        radial-gradient(ellipse at top, #44351c 0%, transparent 68%);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 22px 0 15px;
+      font-size: clamp(45px, 10vw, 82px);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      max-width: 550px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      background: var(--gold);
+      color: #10100c;
+      text-decoration: none;
+      font-weight: 900;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .submit:hover {
+      background: var(--gold-light);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 850px;
+      padding: 0 18px;
+      margin: 0 auto 55px;
+    }
+
+    .feature {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 20px 8px;
+      text-align: center;
+    }
+
+    .symbol {
+      color: var(--gold);
+      font-size: 26px;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .feature small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section {
+      max-width: 700px;
+      margin: 0 auto 65px;
+      padding: 0 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: clamp(20px, 5vw, 35px);
+    }
+
+    h2 {
+      font-size: 27px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 5px 0 25px;
+    }
+
+    .field {
+      margin-bottom: 19px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      background: #0b0b09;
+      color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 1px solid var(--gold);
+      border-color: var(--gold);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #77746c;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .hint {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: normal;
+      margin: 20px 0;
+    }
+
+    .consent input {
+      width: auto;
+      margin-top: 5px;
+      accent-color: var(--gold);
+    }
+
+    .submit {
+      width: 100%;
+      padding: 15px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--gold);
+      color: #10100c;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .notice {
+      margin-top: 14px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 25px 15px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 14px 5%;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .status {
+        font-size: 9px;
+      }
+
+      .features {
+        gap: 7px;
+      }
+
+      .feature {
+        padding: 14px 4px;
+      }
+
+      .feature strong {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">PRIME <span>X</span></div>
+    <div class="status">RECRUITMENT OPEN</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="tag">FREE FIRE GUILD</span>
+
+      <h1>
+        JOIN THE<br>
+        <span class="gold">PRIME X</span>
+      </h1>
+
+      <p>
+        Skill. Loyalty. Teamwork.<br>
+        Show us your skills and become part of
+        a guild built on competition and brotherhood.
+      </p>
+
+      <a class="btn" href="#register">APPLY TO JOIN ↓</a>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <div class="symbol">⚔</div>
+        <strong>COMPETITIVE</strong>
+        <small>Bring your skills</small>
+      </div>
+
+      <div class="feature">
+        <div class="symbol">♛</div>
+        <strong>DEDICATED</strong>
+        <small>Stay active</small>
+      </div>
+
+      <div class="feature">
+        <div class="symbol">◆</div>
+        <strong>ONE FAMILY</strong>
+        <small>Respect everyone</small>
+      </div>
+    </section>
+
+    <section class="section" id="register">
+      <div class="card">
+        <h2>PLAYER APPLICATION</h2>
+
+        <p class="subtitle">
+          Fill in your details to apply for Prime X.
+        </p>
+
+        <form id="applicationForm">
+
+          <div class="field">
+            <label for="playerName">Free Fire name *</label>
+            <input
+              id="playerName"
+              name="playerName"
+              maxlength="40"
+              placeholder="Your in-game name"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="uid">Free Fire UID *</label>
+            <input
+              id="uid"
+              name="uid"
+              type="text"
+              inputmode="numeric"
+              pattern="[0-9]{5,20}"
+              maxlength="20"
+              placeholder="Your numeric UID"
+              title="Enter 5 to 20 digits"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="age">Age *</label>
+            <input
+              id="age"
+              name="age"
+              type="number"
+              min="13"
+              max="100"
+              placeholder="Your age"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Your WhatsApp number *</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              maxlength="25"
+              placeholder="+260..."
+              required>
+            <span class="hint">
+              Include your country code.
+            </span>
+          </div>
+
+          <div class="field">
+            <label for="gameplay">Gameplay video link *</label>
+            <input
+              id="gameplay"
+              name="gameplay"
+              type="url"
+              maxlength="500"
+              placeholder="https://youtube.com/..."
+              required>
+            <span class="hint">
+              Upload your gameplay to YouTube or another video
+              hosting service, then paste the shareable link.
+            </span>
+          </div>
+
+          <div class="field">
+            <label for="mode">Main game mode *</label>
+            <select id="mode" name="mode" required>
+              <option value="">Select your mode</option>
+              <option>Clash Squad</option>
+              <option>Battle Royale</option>
+              <option>Both</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="reason">Why should we recruit you?</label>
+            <textarea
+              id="reason"
+              name="reason"
+              maxlength="500"
+              placeholder="Tell us about your skills and experience..."></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" required>
+            <span>
+              I confirm my details are correct and agree to send
+              my application to the Prime X recruitment team
+              through WhatsApp.
+            </span>
+          </label>
+
+          <button class="submit" type="submit">
+            SEND APPLICATION ↗
+          </button>
+
+          <p id="notice" class="notice" aria-live="polite">
+            Your application will be prepared in WhatsApp.
+          </p>
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>PRIME X</strong><br>
+    MEMBERS, ONE FAMILY.<br>
+    Independent gaming community; not an official Garena website.
+  </footer>
+
+  <script>
+    // PRIME X RECRUITMENT WHATSAPP NUMBER
+    // Country code included, without + or spaces.
+    const GUILD_WHATSAPP = "260978710747";
+
+    const form = document.getElementById("applicationForm");
+    const notice = document.getElementById("notice");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const age = Number(document.getElementById("age").value);
+
+      if (!Number.isInteger(age) || age < 13 || age > 100) {
+        notice.textContent = "Please enter a valid age.";
+        return;
+      }
+
+      const player = {
+        name: document.getElementById("playerName").value.trim(),
+        uid: document.getElementById("uid").value.trim(),
+        age: age,
+        phone: document.getElementById("phone").value.trim(),
+        gameplay: document.getElementById("gameplay").value.trim(),
+        mode: document.getElementById("mode").value,
+        reason: document.getElementById("reason").value.trim()
+      };
+
+      if (!/^https?:\/\/\S+$/i.test(player.gameplay)) {
+        notice.textContent =
+          "Enter a valid video link beginning with https:// or http://.";
+        return;
+      }
+
+      const message = [
+        "👑 PRIME X - NEW GUILD APPLICATION",
+        "━━━━━━━━━━━━━━━━━━",
+        "In-game name: " + player.name,
+        "Free Fire UID: " + player.uid,
+        "Age: " + player.age,
+        "Applicant WhatsApp: " + player.phone,
+        "Gameplay video: " + player.gameplay,
+        "Main game mode: " + player.mode,
+        "Reason for joining: " + (player.reason || "Not provided"),
+        "━━━━━━━━━━━━━━━━━━",
+        "PRIME X - MEMBERS, ONE FAMILY."
+      ].join("\n");
+
+      const whatsappURL =
+        "https://wa.me/" + GUILD_WHATSAPP +
+        "?text=" + encodeURIComponent(message);
+
+      window.location.href = whatsappURL;
+    });
+  </script>
+
+</body>
+</html>
